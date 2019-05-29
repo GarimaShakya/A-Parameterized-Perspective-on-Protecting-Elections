@@ -1,3 +1,5 @@
+# Each Profile is: A collection of groups(or Classes, a collection of voters in a county) contains 40% of the votes where any candidate 'a' is preferred most and 
+# 40% have any other candidate 'b' on top. Remaining 20% votes are generated uniformally randomly over the set of all possible preference order over set of candidates.
 
 #defence policy: for each of the losing candidates,a:
 #                    sort the groups with descending order of winning margin
