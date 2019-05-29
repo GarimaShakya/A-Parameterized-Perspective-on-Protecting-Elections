@@ -37,22 +37,6 @@ from joblib import Parallel, delayed
 import multiprocessing
 
 
-### SWAPRAVA'S HEADER BEGIN
-#import scipy.stats as st
-# send mail
-#
-#import smtplib
-#from email.mime.multipart import MIMEMultipart
-#from email.mime.text import MIMEText
-#from email.mime.base import MIMEBase
-#from email import encoders
-
-
-
-### SWAPRAVA'S HEADER END
-
-
-
 
 
 noOfIterations=1000
@@ -557,45 +541,4 @@ if __name__ == '__main__':
         print str(TempFinalResult[0]) + '_'+str(TempFinalResult[1])+'_'+str(TempFinalResult[2])+ '= [' +str(TempFinalResult[3]) + ' , ' + str(TempFinalResult[5]) + ' , ' + str(noOfIterations-TempFinalResult[4]) + ' , ' + str(TempFinalResult[6]) + ' , ' + str(TempFinalResult[7]) +' ]\n'
     fh.close()   
 
-#
-##    
- 
-### SWAPRAVA'S ADDITION BEGIN
- 
-### Code to email the result  ...
-fromaddr = "my.python.notifier@gmail.com"
- 
-toaddr = ["swaprava@cse.iitk.ac.in", "garima@cse.iitk.ac.in"]
- 
-msg = MIMEMultipart()
- 
-msg['From'] = fromaddr
-msg['To'] = ", ".join(toaddr)
-msg['Subject'] = "Simulation complete, groups=" +str(Groups)+ ", kd=" +str(kdAll)
- 
-body = "The files are attached. Enjoy your day/night!"
- 
-msg.attach(MIMEText(body, 'plain'))
- 
-filename1 = fileName
-attachment1 = open(filename1, "rb")
- 
-part1 = MIMEBase('application', 'octet-stream')
-part1.set_payload((attachment1).read())
-encoders.encode_base64(part1)
-part1.add_header('Content-Disposition', "attachment; filename= %s" % filename1)
- 
-msg.attach(part1)
-attachment1.close()
 
- 
- 
-server = smtplib.SMTP('smtp.gmail.com', 587)
-server.starttls()
-server.login("my.python.notifier@gmail.com", "nohtyp$123")
-text = msg.as_string()
-server.sendmail(fromaddr, toaddr, text)
-server.quit()
-# EMAIL REMINDER OF THE TERMINATION
- 
-## SWAPRAVA'S ADDITION END
