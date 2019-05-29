@@ -1,5 +1,5 @@
-#i input txt file
-#output: show and save the plot
+# input:  txt file (e.g. ToPlotProfile=1000n=12000Groups=12Randomized4Generator4.txt ) which is output of the ProtectingElections.py
+# output: show and save the plot
 
 import numpy as np
 import scipy.stats as st
@@ -99,7 +99,7 @@ for index in xrange(len(bor_8_4)):
     
 for index in xrange(len(bor_9_3)):
     borda[index].append(bor_9_3[index])
-#    
+ 
 for index in xrange(len(bor_10_2)):
     borda[index].append(bor_10_2[index]) 
 print Plurality, veto,borda
@@ -136,8 +136,10 @@ rects9 = ax.bar(ind + width + width + 3*gap, borda[2], width, color='r', bottom=
 # add some text for labels, title and axes ticks
 ax.set_ylabel('Voting profiles',fontsize=15, color='k')
 ax.set_xlabel(r'$k_d$',fontsize=15, color='k')
+
 #ax.set_title('',fontsize=25, color='k')
 #ax.set_xticks(ind + width / 2)
+
 plt.xticks(ind+width+2*gap+ width/2, ('2','3','4','5','6','7','8','9','10'))
 plt.rcParams["figure.figsize"] = (9,5)
 
