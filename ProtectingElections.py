@@ -1,14 +1,14 @@
 # Each Profile is: A collection of groups(or Classes, a collection of voters in a county) contains 40% of the votes where any candidate 'a' is preferred most and 
 # 40% have any other candidate 'b' on top. Remaining 20% votes are generated uniformally randomly over the set of all possible preference order over set of candidates.
 
-#defence policy: for each of the losing candidates,a:
+# Defence policy: for each of the losing candidates,a:
 #                    sort the groups with descending order of winning margin
 #                    and find the front kd number of groups for the pair (winner, a)
 #                for each group,g:
 #                    find the frequency of g in find the front kd number of groups for pair (winner, a) forall a 
 #                pick the most frequent kd groups as groups should be defended
 #                
-#Attack policy: for each of the losing candidates,a:
+# Attack policy: for each of the losing candidates,a:
 #                    sort the groups with descending order of winning margin
 #                    and find the front ka number of groups for the pair (winner, a)
 #                    check: attacking those ka groups will change the outcome?
@@ -16,7 +16,7 @@
 #                        no: continue
 #                if the above for loop do not give a set of groups, then the set of attacked groups is empty.
 
-#Checking for optimality: If greedy fails:
+# Checking for optimality: If greedy fails:
 #                                if attack is always possible for each of the possible kd groups:
 #                                    'attack is always possible for this profile. \n  '
 #                                    greedy is optimal
@@ -25,7 +25,7 @@
 #                          else:
 #                                greedy is optimal
 #
-#Parallel Processing over the iterations
+# Parallel Processing over the iterations
 
 
 import numpy as np
